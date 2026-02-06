@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock-Paper-Scissors</title>
+  </head>
+  <body>
+    <p>Rock-Paper-Scissors</p>
+
+    <button onclick="
+      const computerMove = pickComputerMove(); 
+
+      let result = '';
+      if(computerMove === 'Rock') {
+        result = 'It is a tie!';
+      } else if(computerMove === 'Paper') {
+        result = 'You lose!';
+      } else if(computerMove === 'Scissors') {
+        result = 'You win!';
+      } 
+      alert(`You chose Rock. Computer chose: ${computerMove}. ${result}`);
+    ">Rock</button>
+
+
+    <button onclick="
+      const computerMove = pickComputerMove();
+
+      let result = '';
+
+      if(computerMove === 'Rock') {
+        result = 'You win!'; 
+      } else if(computerMove === 'Paper') {
+        result = 'It is a tie!'; 
+      } else if(computerMove === 'Scissors') {
+        result = 'You lose!';
+      }
+
+      alert(`You chose Paper. Computer chose: ${computerMove}. ${result}`);
+    ">Paper</button>
+
+
+    <button onclick="
+      const computerMove = pickComputerMove(); // Make sure this is called first
+
+      let result = '';
+      if(computerMove === 'Rock') {
+        result = 'You lose!';
+      } else if(computerMove === 'Paper') {
+        result = 'You win!'; 
+      } else if(computerMove === 'Scissors') {
+        result = 'It is a tie!'; 
+      }
+
+      // The corrected alert message:
+      alert(`You chose Scissors. Computer chose: ${computerMove}. ${result}`);
+    ">Scissors</button>
+
+    <script>
+      let computerMove = '';
+      
+      function pickComputerMove() {
+        let randomNumber = Math.random();
+
+        if(randomNumber >= 0 && randomNumber < 1/3) 
+                {
+                  computerMove = 'Rock';
+                } 
+        else if(randomNumber >= 1/3 && randomNumber < 2/3) 
+                {
+                  computerMove = 'Paper';
+                } 
+        else if(randomNumber >= 2/3 && randomNumber < 1)
+                {
+                  computerMove = 'Scissors';
+                }
+        return computerMove;
+        }
+    </script>
+  </body>
+</html>

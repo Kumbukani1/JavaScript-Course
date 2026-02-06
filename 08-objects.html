@@ -1,0 +1,63 @@
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Objects</title>
+      </head>
+      <body>
+        
+     <script>
+      /*
+         const product = {
+           name: 'Laptop',
+           price: 30000,
+           brand: 'Lenovo',
+           color: 'Silver'
+         };
+         console.log(product);//Entire object
+         console.log(product.name); //Name of the product
+
+         product.name = 'Smartphone'; //Updating the value of name property
+         console.log(product.name);
+         product.brand = 'Samsung'; //Updating the value of brand property
+         console.log(product.brand);
+
+
+        product.warranty = '1 year'; //Adding a new property      
+        console.log(product);   
+
+          delete product.color; //Deleting a property
+          console.log(product);
+          */
+
+          const product2 = {
+            name:'Shirt',
+            ['derivery-time']: '1 Day'
+            rating: {
+              //no object inside an object
+              stars: 4.5,
+              count: 100
+            },
+            fun: fuction function1 () {
+              console.log('function inside an object');
+            }
+
+          };
+          console.log(product2);
+          console.log(product2.name);//same as the following line
+         console.log(produc['name']);
+         console.log(product['derivery-time']);
+
+         console.log(product2.rating.count);
+         product2.fun(); 
+
+         console.log(JSON.stringify(product2));// JSON.stringify()This converts the  JS object to a JSON object   
+
+
+         //converting back to JS object
+         const jsonString = console.log(JSON.stringify(product2));
+         console.log(JSON.parse(jsonString));
+
+
+       </script>
+      </body>
+    </html>
