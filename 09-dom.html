@@ -5,10 +5,17 @@
       </head>
       <body>
         <button>Hello</button>
+        <button class="js-button">Second button</button>
      <script>
 
-       console.log(document.querySelector('button'));
-       
+       console.log(document.querySelector('button').innerHTML);
+       document.querySelector('button')
+          .innerHTML = 'Changed';
+          /*we can even put the .innerHTML on a different line and it will work because of the way the dot operator works in JavaScript. It will look for the button element and then change its innerHTML to 'Changed'.
+          */
+
+          const buttonElement = document.querySelector('.js-button');
+          console.log(buttonElement);
             /*
         console.log(document.title);
         document.title = 'Changed';
