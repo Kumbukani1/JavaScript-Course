@@ -9,7 +9,8 @@
     <button onclick="playGame('Rock')">Rock</button>
     <button onclick="playGame('Paper')">Paper</button>
     <button onclick="playGame('Scissors')">Scissors</button>
-
+    <p class="js-results"></p>
+    <p class="js-moves"></p>
     <p class="js-score"></p>
 
     <button onclick="
@@ -75,9 +76,12 @@
         localStorage.setItem('score', JSON.stringify(score));
         updateScore();
 
-        alert(`You chose ${playerMove}. Computer chose: ${computerMove}. ${result}
-Wins: ${score.wins}. Losses: ${score.losses}. Ties: ${score.ties}`);
-      }
+        document.querySelector('.js-results').innerHTML = `You played : ${playerMove}
+        . Computer played: ${computerMove}.`;
+        
+        document.querySelector('.js-moves').innerHTML = `You played: ${playerMove}
+        . Computer played: ${computerMove}.`;
+        }
 
       function pickComputerMove() {
         let randomNumber = Math.random();
