@@ -2,18 +2,60 @@
     <html>
       <head>
         <title>DOM Projects</title>
+
+        <style>
+
+           body{
+            font-family: Arial;
+          }
+          .subscribe-button{
+            background-color: black;
+            color: white;
+            border: none;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 12px;
+            cursor: pointer;
+            margin: 30px;
+          }
+          /* This style will change the background color and text color of the subscribe button when it has the is-subscribed class. */
+          .is-subscribed{ 
+            background-color: rgb(240, 240, 240);
+            color: black;
+          }
+          .cost-input{
+            padding: 10px;
+            font-size: 15px;            
+          }
+
+          .calculate-button{
+            background-color:green;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            font-weight: bold;
+            font-size: 12px;
+            cursor: pointer;
+          }
+        </style>
       </head>
       <body>
         <p>YouTube Subscribe Button</p>
         <button onclick="
           subscribe(); /* this will call the subscribe function when the button is clicked.*/
-       "class="js-subscribe-button">Subscribe</button>
+       "class="js-subscribe-button subscribe-button">Subscribe</button>
 
           <p>Amazon Shipping Calculator</p>
-          <input placeholder="Cost of order" class="js-cost-input" onkeydown="
+          <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="
             hundleCostKeydown(event);
           ">
-          <button onclick="calculateTotal()">Calculate</button>
+          <button onclick="
+          calculateTotal();
+          "class="calculate-button">Calculate</button>
           <p class="js-total-cost"></p>
 
      <script> 
@@ -46,9 +88,14 @@
        
        if(buttonElement.innerHTML === 'Subscribe') {
          buttonElement.innerHTML = 'Subscribed';
+
+         buttonElement.classList.add('is-subscribed');// this will add the is-subscribed class to the button element if the innerHTML is "Subscribe".
+         
        } 
        else {
          buttonElement.innerHTML = 'Subscribe';
+
+         buttonElement.classList.remove('is-subscribed');// this will remove the is-subscribed class from the button element if the innerHTML is "Subscribed".
        }
 
             }
