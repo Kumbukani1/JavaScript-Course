@@ -10,10 +10,11 @@
       }
       updateScore();
 
+
       function autoPlay(){
         setInterval(function(){
           const playerMove = pickComputerMove();
-          playGame(playerMove)
+          playGame(playerMove);098iujhgfvcxssrxydtgvbyuh 
         }, 1000);
       }
 
